@@ -1,0 +1,21 @@
+default: 
+  adapter: postgresql
+  encoding: unicode
+development: 
+  adapter: postgresql
+  database: Moveis_development
+  encoding: unicode
+  username: postgres
+  password: "<%= ENV['MOVEISAPPLICATION_DATABASE_PASSWORD'] %>"
+production: 
+  adapter: postgresql
+  database: Moveis_production
+  encoding: unicode
+  password: "<%= ENV['MOVEISAPPLICATION_DATABASE_PASSWORD'] %>"
+  username: postgres
+test: 
+  adapter: postgresql
+  database: MoveisApplication_test
+  encoding: unicode
+  username: postgres
+  password: "<%= ENV['MOVEISAPPLICATION_DATABASE_PASSWORD'] %>"
