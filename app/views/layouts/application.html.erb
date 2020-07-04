@@ -10,12 +10,16 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="devise text-white text-blue-200">
+    <%= render "devise/shared/navigation" %>
     <div class="container mx-auto">
-      <%= render "devise/shared/navigation" %>
       <%= yield %>
     </div>
 
-    <%= render "devise/shared/notices" %>
+
+    <footer class="container mx-auto text-center text-sm pt-3 text-blue-700">
+      <p>Copyright 2020 &copy; All Rights Reserved</p>
+    </footer>
+    <!--<%= render "devise/shared/notices" %>-->
   </body>
 </html>
