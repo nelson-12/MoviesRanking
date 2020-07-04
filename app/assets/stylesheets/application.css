@@ -27,7 +27,19 @@
     max-width: 30%;
     margin-top: 10%;
   }
+
+  .container-content{
+    max-width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+  }
+
+  table{
+    margin-top: 5%;
+  }
   
   footer.container {
     margin-top:1%
+    
   }
+
