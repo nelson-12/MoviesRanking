@@ -17,7 +17,15 @@
             <td class="border px-4 py-2 text-center"><%= movie['episode_id'] %></td>
             <td class="border px-4 py-2"><%= movie['director'] %></td>
             <td class="border px-4 py-2 text-center"><%= DateTime.parse(movie['release_date']).strftime("%Y") %></td>
-            <td class="border px-4 py-2">Like</td>
+            <td class="border px-4 py-2">
+              <%= link_to likes_path(movie['episode_id']), class: "text-light", method: :post do %>
+                <% if liked?(movie['episode_id']) %>
+                    <button class="btn btn-liked size-12">Dislike</button>
+                  <% else %>
+                    <button class="btn btn-neutral size-12">Like</button>
+                <% end %>
+              <% end %>
+            </td>
         </tr>
     <% end %>
   </tbody>
