@@ -26,7 +26,7 @@
                         <% if movie['rank'] > 2 %>
                             <img src="https://img.icons8.com/clouds/100/000000/security-block.png"/>
                         <% else %>
-                            <%= link_to ranking_path(movie['url']), class: "text-light", method: :get do %>
+                            <%= link_to ranking_path(url_param(movie['url'])), class: "text-light", method: :get do %>
                                 <button class="btn btn-liked size-12"><img src="https://img.icons8.com/cotton/64/000000/movie-beginning--v1.png"/></button>
                              <% end %>
                         <% end %>

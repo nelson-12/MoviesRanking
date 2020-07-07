@@ -8,7 +8,7 @@ class RankingController < ApplicationController
     end
 
     def show
-        puts params
+        @details = @sumary_service.details(params[:id])
     end
     private 
 

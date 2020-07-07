@@ -9,4 +9,9 @@ class GlobalSummary
     def general 
         self.class.get('/films/?format=json', @options)
     end
+
+    def details(film)
+        puts film
+        self.class.get('/films/'+film+'/?format=json', @options)
+    end
 end
