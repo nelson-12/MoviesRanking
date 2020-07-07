@@ -16,7 +16,7 @@ class RankingController < ApplicationController
             SELECT reference_movie_ep_id, 
             COUNT(reference_movie_ep_id),
             RANK() OVER(
-                ORDER BY COUNT(reference_movie_ep_id)
+                ORDER BY COUNT(reference_movie_ep_id) DESC
             )
             FROM likes 
             group by reference_movie_ep_id
