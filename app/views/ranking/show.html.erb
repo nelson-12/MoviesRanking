@@ -4,13 +4,9 @@
   <h2 class="text-4xl mb-4 font-medium text-center text-blue-700"><%= @details['title']%></h2>
 
   <div class="bg-white mb-4 border-blue-700 text-gray-700 border-2 rounded p-8 shadow-lg">
-    <div class="grid grid-rows-4 grid-flow-col gap-4">
-        <div class="row-span-4 ">
-            <div class= "row-start-1 row-end-3">
-                 <img src="https://entrelementos.com/wp-content/uploads/2020/02/star-wars-the-rise-of-skywalker-5deb100257e34-1024x576.jpg"/>
-            </div>
-        </div>
+    <div class="grid grid-rows-3">
         <div class="row-span-1 col-span-2">
+            <h1 class="text-2xl mb-4 text-lefth text-blue-700">Detalhes</h1>
             <div class="divide-y divide-gray-400">
                 <div class="py-2 grid grid-cols-2 divide-x">
                     <div class="text-center">Episodio :</div>
@@ -46,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <div class="row-span-2 col-span-2 ">
+        <div class="row-span-1 col-span-2 ">
             <h1 class="text-2xl mb-4 text-lefth text-blue-700">Abertura</h1>
             <%= @details['opening_crawl'] %>
         </div>
@@ -54,13 +50,13 @@
             <div class="grid grid-cols-2 divide-x divide-gray-400">
                 <div class="divide-y divide-gray-400 ">
                     <h1 class="text-2xl mb-4 text-lefth text-blue-700">Personagens</h1>
-                    <% @details['characters'][0,4].each do | character | %>
+                    <% @details['characters'][0,6].each do | character | %>
                         <div class="text-center py-2"><p><%= search_information_api('people',url_param(character)) %></p></div>
                     <% end %>   
                 </div>
                 <div class="divide-y divide-gray-400 ">
                     <h1 class="text-2xl mb-4 text-lefth text-blue-700">Planetas</h1>
-                    <% @details['planets'][0,4].each do | planet | %>
+                    <% @details['planets'][0,6].each do | planet | %>
                         <div class="text-center py-2"><p><%= search_information_api('planets',url_param(planet)) %></p></div>
                     <% end %>   
                 </div>
