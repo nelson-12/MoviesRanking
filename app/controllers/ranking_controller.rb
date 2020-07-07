@@ -1,14 +1,13 @@
 class RankingController < ApplicationController
     before_action :set_global_summary_service
-
-    before_action :set_global_summary_service
+    include ApplicationHelper
 
     def index
         @ranking = raking_formated()
     end
 
     def show
-        @details = @sumary_service.details(params[:id])
+        @details = details_formation(params[:id])
     end
     private 
 
@@ -37,8 +36,10 @@ class RankingController < ApplicationController
                 end
             end
         end
-
         ranking
-        
+    end
+
+    def details_formation(movie)
+        @details = @sumary_service.details(movie)
     end
 end
