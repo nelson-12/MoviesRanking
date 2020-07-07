@@ -15,24 +15,23 @@
   <tbody>
     <% @ranking.each do | movie | %>
         <%= link_to likes_path(movie), class: "text-light", method: :post do %>
-            <tr class="text-blue-700">
-                <td class="border px-4 py-2 text-center"><%= movie['rank'] %></td>  
-                <td class="border px-4 py-2"><%= movie['title'] %></td>
-                <td class="border px-4 py-2 text-center"><%= movie['episode_id'] %></td>
-                <td class="border px-4 py-2"><%= movie['director'] %></td>
-                <td class="border px-4 py-2 text-center"><%= DateTime.parse(movie['release_date']).strftime("%Y") %></td>
-                <td class="border px-4 py-2 text-center"><%= movie['count'] %></td>
-                <td class="border px-4 py-2">
-                        <% if movie['rank'] > 2 %>
-                            <img src="https://img.icons8.com/clouds/100/000000/security-block.png"/>
-                        <% else %>
-                            <%= link_to ranking_path(url_param(movie['url'])), class: "text-light", method: :get do %>
-                                <button class="btn btn-liked size-12"><img src="https://img.icons8.com/cotton/64/000000/movie-beginning--v1.png"/></button>
-                             <% end %>
-                        <% end %>
-                    
-                </td>
-            </tr>
+          <tr class="text-blue-700">
+            <td class="border px-4 py-2 text-center"><%= movie['rank'] %></td>  
+            <td class="border px-4 py-2"><%= movie['title'] %></td>
+            <td class="border px-4 py-2 text-center"><%= movie['episode_id'] %></td>
+            <td class="border px-4 py-2"><%= movie['director'] %></td>
+            <td class="border px-4 py-2 text-center"><%= DateTime.parse(movie['release_date']).strftime("%Y") %></td>
+            <td class="border px-4 py-2 text-center"><%= movie['count'] %></td>
+            <td class="border px-4 py-2">
+              <% if movie['rank'] > 2 %>
+                <img src="https://img.icons8.com/clouds/100/000000/security-block.png"/>
+              <% else %>
+                <%= link_to ranking_path(url_param(movie['url'])), class: "text-light", method: :get do %>
+                  <button class="btn btn-liked size-12"><img src="https://img.icons8.com/cotton/64/000000/movie-beginning--v1.png"/></button>
+                <% end %>
+              <% end %>
+            </td>
+          </tr>
         <% end %>
     <% end %>
   </tbody>

@@ -8,14 +8,14 @@
     <div class="text-sm  text-white lg:flex-grow">
     <% if user_signed_in? %>
       <ul class="nav navbar-nav flex">
-        <li class="mr-3"><%= link_to 'Home', root_path %></li>
-        <li class="mr-3"><%= link_to 'Raking', ranking_index_path %></li>
+        <li class="mr-3"><%= link_to 'Lista', root_path %></li>
+        <li class="mr-3"><%= link_to 'Ranking', ranking_index_path %></li>
       </ul>
     <% end %>
     </div>
     <div class="text-white">
      <% if user_signed_in? %>
-        <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+        <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
       <% else %>
         <%= link_to 'Login', new_user_session_path %>
       <% end %> 
