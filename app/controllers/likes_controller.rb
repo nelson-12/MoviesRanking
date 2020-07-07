@@ -13,6 +13,7 @@ class LikesController < ApplicationController
                 @like.reference_movie_ep_id = reference_movie_ep_id
                 if !@like.save
                     flash[:danger] = 'like com problema'
+                    redirect_back(fallback_location: root_path)
                 end
                 redirect_back(fallback_location: root_path)
             else
@@ -25,7 +26,7 @@ class LikesController < ApplicationController
     private
 
     def dislike(like)
-        @like = Like.find_by(reference_movie_ep_id: like)
+        @like = Like.find_by(user_id: current_user.id ,reference_movie_ep_id: like)
 
         return unless @like
 
