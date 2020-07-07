@@ -14,10 +14,10 @@ class RankingController < ApplicationController
     def raking_formated()
        votos =  Like.find_by_sql('
             SELECT reference_movie_ep_id, 
-            COUNT(reference_movie_ep_id),
-            RANK() OVER(
+            COUNT(reference_movie_ep_id) ,
+            DENSE_RANK() OVER(
                 ORDER BY COUNT(reference_movie_ep_id) DESC
-            )
+            ) as rank
             FROM likes 
             group by reference_movie_ep_id
         ').as_json

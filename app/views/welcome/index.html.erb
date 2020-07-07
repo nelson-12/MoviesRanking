@@ -20,9 +20,9 @@
             <td class="border px-4 py-2">
               <%= link_to likes_path(movie['episode_id']), class: "text-light", method: :post do %>
                 <% if liked?(movie['episode_id']) %>
-                    <button class="btn btn-liked size-12">Dislike</button>
+                    <button class="btn btn-liked size-12"><img src="https://img.icons8.com/wired/64/000000/facebook-like.png"/></button>
                   <% else %>
-                    <button class="btn btn-neutral size-12">Like</button>
+                    <button class="btn btn-neutral size-12"><img src="https://img.icons8.com/dusk/64/000000/facebook-like.png"/></button>
                 <% end %>
               <% end %>
             </td>
