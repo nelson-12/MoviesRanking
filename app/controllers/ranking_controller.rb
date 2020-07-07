@@ -7,6 +7,11 @@ class RankingController < ApplicationController
         @ranking = raking_formated()
     end
 
+    def show
+        puts params
+    end
+    private 
+
     def set_global_summary_service
         @sumary_service = GlobalSummary.new
     end

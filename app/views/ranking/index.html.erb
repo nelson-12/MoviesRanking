@@ -23,13 +23,12 @@
                 <td class="border px-4 py-2 text-center"><%= DateTime.parse(movie['release_date']).strftime("%Y") %></td>
                 <td class="border px-4 py-2 text-center"><%= movie['count'] %></td>
                 <td class="border px-4 py-2">
-
                         <% if movie['rank'] > 2 %>
                             <img src="https://img.icons8.com/clouds/100/000000/security-block.png"/>
                         <% else %>
-                            <%= link_to likes_path(movie['episode_id']), class: "text-light", method: :post do %>
+                            <%= link_to ranking_path(movie['url']), class: "text-light", method: :get do %>
                                 <button class="btn btn-liked size-12"><img src="https://img.icons8.com/cotton/64/000000/movie-beginning--v1.png"/></button>
-                            <% end %>
+                             <% end %>
                         <% end %>
                     
                 </td>
