@@ -1,0 +1,26 @@
+<h2 class="text-4xl mb-4 font-medium text-center text-blue-700">Ranking de Filmes</h2>
+
+<table class="table-fixed bg-white  shadow-lg">
+  <thead>
+    <tr class="text-blue-700 bg-blue-900">
+      <th class="border w-2/2 px-4 py-2 ">Posição</th> 
+      <th class="border w-1/4 px-4 py-2">Filme</th>
+      <th class="border w-1/4 px-4 py-2">Episódio</th>
+      <th class="border w-1/4 px-4 py-2">Diretor</th>
+      <th class="border w-1/4 px-4 py-2">Ano lançamento</th>
+      <th class="border w-1/4 px-4 py-2">votos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ranking.each do | movie | %>
+        <tr class="text-blue-700">
+            <td class="border px-4 py-2 text-center"><%= movie['rank'] %></td>  
+            <td class="border px-4 py-2"><%= movie['title'] %></td>
+            <td class="border px-4 py-2 text-center"><%= movie['episode_id'] %></td>
+            <td class="border px-4 py-2"><%= movie['director'] %></td>
+            <td class="border px-4 py-2 text-center"><%= DateTime.parse(movie['release_date']).strftime("%Y") %></td>
+            <td class="border px-4 py-2 text-center"><%= movie['count'] %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
