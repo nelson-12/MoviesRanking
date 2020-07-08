@@ -1,6 +1,7 @@
 class RankingController < ApplicationController
     before_action :set_global_summary_service
     include ApplicationHelper
+    include RankingHelper
 
     def index
         @ranking = raking_formated()
