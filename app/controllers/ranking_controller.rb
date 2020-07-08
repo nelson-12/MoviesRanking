@@ -53,7 +53,7 @@ class RankingController < ApplicationController
             votos.each do |voto|
                 puts voto
                if voto['reference_movie_ep_id'].to_s == id
-                    puts voto
+                    puts voto['rank'] <= 2
                     if voto['rank'] <= 2
                         result = true
                     else
