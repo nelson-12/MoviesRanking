@@ -1,32 +1,35 @@
 <h2 class="text-4xl mb-4 font-medium text-center text-blue-700">Lista de Filmes</h2>
-
-<table class="table-fixed bg-white  shadow-lg">
-  <thead>
-    <tr class="text-blue-700 bg-blue-900">
-      <th class="border w-1/4 px-4 py-2">Filme</th>
-      <th class="border w-1/4 px-4 py-2">Episódio</th>
-      <th class="border w-1/4 px-4 py-2">Diretor</th>
-      <th class="border w-2/4 px-4 py-2">Ano lançamento</th>
-      <th class="border w-1/4 px-4 py-2">Ação</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @summary['results'].each do | movie | %>
-        <tr class="text-blue-700">  
-            <td class="border px-4 py-2"><%= movie['title'] %></td>
-            <td class="border px-4 py-2 text-center"><%= movie['episode_id'] %></td>
-            <td class="border px-4 py-2"><%= movie['director'] %></td>
-            <td class="border px-4 py-2 text-center"><%= DateTime.parse(movie['release_date']).strftime("%Y") %></td>
-            <td class="border px-4 py-2">
-              <%= link_to likes_path(movie['episode_id']), class: "text-light", method: :post do %>
-                <% if liked?(movie['episode_id']) %>
-                    <button class="btn btn-liked size-12"><img src="https://img.icons8.com/wired/64/000000/facebook-like.png"/></button>
-                  <% else %>
-                    <button class="btn btn-neutral size-12"><img src="https://img.icons8.com/dusk/64/000000/facebook-like.png"/></button>
+<% if @summary['coutn'].to_i  > 0 %>
+  <table class="table-fixed bg-white  shadow-lg">
+    <thead>
+      <tr class="text-blue-700 bg-blue-900">
+        <th class="border w-1/4 px-4 py-2">Filme</th>
+        <th class="border w-1/4 px-4 py-2">Episódio</th>
+        <th class="border w-1/4 px-4 py-2">Diretor</th>
+        <th class="border w-2/4 px-4 py-2">Ano lançamento</th>
+        <th class="border w-1/4 px-4 py-2">Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @summary['results'].each do | movie | %>
+          <tr class="text-blue-700">  
+              <td class="border px-4 py-2"><%= movie['title'] %></td>
+              <td class="border px-4 py-2 text-center"><%= movie['episode_id'] %></td>
+              <td class="border px-4 py-2"><%= movie['director'] %></td>
+              <td class="border px-4 py-2 text-center"><%= DateTime.parse(movie['release_date']).strftime("%Y") %></td>
+              <td class="border px-4 py-2">
+                <%= link_to likes_path(movie['episode_id']), class: "text-light", method: :post do %>
+                  <% if liked?(movie['episode_id']) %>
+                      <button class="btn btn-liked size-12"><img src="https://img.icons8.com/wired/64/000000/facebook-like.png"/></button>
+                    <% else %>
+                      <button class="btn btn-neutral size-12"><img src="https://img.icons8.com/dusk/64/000000/facebook-like.png"/></button>
+                  <% end %>
                 <% end %>
-              <% end %>
-            </td>
-        </tr>
-    <% end %>
-  </tbody>
-</table>
+              </td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+<h2 class="text-4xl mb-4 font-medium text-center text-blue-700">Problema para carregar a lista de filmes</h2>
+<% end %>
