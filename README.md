@@ -1,4 +1,4 @@
-# Product Name
+# Movies Ranking
 > Aplicação Web utilizando Ruby on Rails, com listagem de filmes dinamica e sistema de ranking.
 
 ![](header.png)
