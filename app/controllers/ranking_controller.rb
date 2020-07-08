@@ -8,15 +8,18 @@ class RankingController < ApplicationController
     end
 
     def show
-        if validade_position_show(params[:id]) == true
-            @details = get_details(params[:id])
-            if @details['detail'] == 'Not found'
-                flash[:danger] = 'Filme não existente'
+        puts params
+        @details = get_details(params[:id])
+        if @details['detail'] == 'Not found'
+            flash[:danger] = 'Filme não existente'
+            redirect_back(fallback_location: ranking_index_path)
+        else
+            if validade_position_show(@details['episode_id']) == true
+                @details
+            else
+                flash[:danger] = 'O Filme indicado não oculpa as 2 primeiras posições no Ranking ou não possui votos'
                 redirect_back(fallback_location: ranking_index_path)
             end
-        else
-            flash[:danger] = 'O Filme indicado não oculpa as 2 primeiras posições no Ranking ou não possui votos'
-            redirect_back(fallback_location: ranking_index_path)
         end
     end
 
@@ -45,16 +48,13 @@ class RankingController < ApplicationController
        end
     end
 
-    def validade_position_show(id)
+    def validade_position_show(episode_id)
         votos = get_votos()
         if votos.empty? 
             result = false
         else
             votos.each do |voto|
-                puts voto
-               if voto['reference_movie_ep_id'].to_s == id
-                puts id
-                    puts voto
+               if voto['reference_movie_ep_id'] == episode_id
                     if voto['rank'] <= 2
                         result = true
                     else
