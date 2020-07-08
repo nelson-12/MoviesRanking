@@ -11,7 +11,7 @@
 - Ruby on Rails
 - tailwindcss Link:(https://tailwindcss.com/)
 - Api Star Wars Movies = https://swapi.dev/api/films/?format=json
-- Gems: Devise, RSpec,addressable,capybara,factory_bot_rails,dotenv,httparty ,database_cleaner, selenium-webdriver.
+- Gems: Devise, RSpec,addressable,capybara,factory_bot_rails,dotenv,httparty ,database_cleaner.
 
 ### Requirements
 
@@ -23,14 +23,16 @@
 * Download repository to your local machine, then run `bundle install` and run config your password of DB in the .env, example in .env.example , `rails db:create`, `rails db:migrate` all within the terminal console.
 
 ### Automated Testing with [RSPEC](https://github.com/rspec/rspec-rails)
+* Teste do Devise
 
 
+👤 **Nelson de Oliviera Sousa**
+[@nelsondeolive11](https://twitter.com/nelsondeolive11) – nelson.olvieiras.sousa@gmail.com
+[https://github.com/nelson-12](https://github.com/nelson-12)
 
-## Meta
+## 📝 License
 
-Nelson de Oliveira Sousa – [@nelsondeolive11](https://twitter.com/nelsondeolive11) – nelson.olvieiras.sousa@gmail.com
+This project is [MIT](lic.url) licensed.
 
-Distributed under the XYZ license. See ``LICENSE`` for more information.
 
-[https://github.com/yourname/github-link](https://github.com/dbader/)
 
