@@ -52,7 +52,6 @@ pt-BR:
       send_instructions: "Dentro de minutos, você receberá um email com instruções para o desbloqueio da sua conta."
       send_paranoid_instructions: "Se sua conta existir, você receberá um e-mail com instruções para desbloqueá-la em alguns minutos."
       unlocked: "Sua conta foi desbloqueada com sucesso. Efetue login para continuar."
-
   errors:
     messages:
       already_confirmed: "já foi confirmado"
@@ -63,3 +62,25 @@ pt-BR:
       not_saved:
         one: "Não foi possível salvar %{resource}: 1 erro"
         other: "Não foi possível salvar %{resource}: %{count} erros."
+
+  activerecord:
+      errors:
+        models:
+          user:
+            attributes:
+              email:
+                blank: "Campo Email é Obrigatorio"
+                taken: "Por favor, use um email diferente"
+                invalid: "Email invalido"
+              password:
+                blank: "Campo Password obrigatorio"
+                confirmation: "Password não combina"
+              password_confirmation:
+                blank: "Especifique uma confirmação de senha"
+              firstname:
+                blank: "Campo Nome é Obrigatorio"
+                too_short: "O Nome deve conter de 3 a 15 caracteres"
+              lastname:
+                blank: "Campo Sobrenome é Obrigatorio"
+                too_short: "O Nome deve conter de 3 a 15 caracteres"
+      
