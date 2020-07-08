@@ -1,24 +1,36 @@
-# README
+# Product Name
+> Aplicação Web utilizando Ruby on Rails, com listagem de filmes dinamica e sistema de ranking.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![](header.png)
 
-Things you may want to cover:
+## Heroku Link:(https://moviesranking.herokuapp.com/
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Ruby
+- Ruby on Rails
+- tailwindcss Link:(https://tailwindcss.com/)
+- Api Star Wars Movies = https://swapi.dev/api/films/?format=json
+- Gems: Devise, RSpec,addressable,capybara,factory_bot_rails,dotenv,httparty ,database_cleaner, selenium-webdriver.
 
-* Configuration
+### Requirements
 
-* Database creation
+* Ruby 2.6.3
+* Postgresql - [Instructions for installation](https://www.howtoforge.com/tutorial/ruby-on-rails-ror-with-postgresql-on-ubuntu-16-04/)
 
-* Database initialization
+### Installation
 
-* How to run the test suite
+* Download repository to your local machine, then run `bundle install` and run config your password of DB in the .env, example in .env.example , `rails db:create`, `rails db:migrate` all within the terminal console.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Automated Testing with [RSPEC](https://github.com/rspec/rspec-rails)
 
-* Deployment instructions
 
-* ...
+
+## Meta
+
+Nelson de Oliveira Sousa – [@nelsondeolive11](https://twitter.com/nelsondeolive11) – nelson.olvieiras.sousa@gmail.com
+
+Distributed under the XYZ license. See ``LICENSE`` for more information.
+
+[https://github.com/yourname/github-link](https://github.com/dbader/)
+
