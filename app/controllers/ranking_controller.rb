@@ -55,7 +55,6 @@ class RankingController < ApplicationController
                if voto['reference_movie_ep_id'].to_s == id
                     puts voto
                     if voto['rank'] <= 2
-                        puts voto['rank'] > 2 || voto['rank'] == 2
                         result = true
                     else
                         result = false
