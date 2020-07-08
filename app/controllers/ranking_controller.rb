@@ -51,8 +51,11 @@ class RankingController < ApplicationController
             result = false
         else
             votos.each do |voto|
+                puts voto
                if voto['reference_movie_ep_id'].to_s == id
+                    puts voto
                     if voto['rank'] == 1 || voto['rank'] == 2
+                        puts voto['rank'] == 1 || voto['rank'] == 2
                         result = true
                     else
                         result = false
