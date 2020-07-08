@@ -1,38 +1,41 @@
 <h2 class="text-4xl mb-4 font-medium text-center text-blue-700">Ranking de Filmes</h2>
-
-<table class="table-fixed bg-white  shadow-lg">
-  <thead>
-    <tr class="text-blue-700 bg-blue-900">
-      <th class="border w-2/2 px-4 py-2 ">Posição</th> 
-      <th class="border w-1/4 px-4 py-2">Filme</th>
-      <th class="border w-1/4 px-4 py-2">Episódio</th>
-      <th class="border w-1/4 px-4 py-2">Diretor</th>
-      <th class="border w-1/4 px-4 py-2">Ano lançamento</th>
-      <th class="border w-1/4 px-4 py-2">votos</th>
-      <th class="border w-1/4 px-4 py-2">Ação</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @ranking.each do | movie | %>
-        <%= link_to likes_path(movie), class: "text-light", method: :post do %>
-          <tr class="text-blue-700">
-            <td class="border px-4 py-2 text-center"><%= movie['rank'] %></td>  
-            <td class="border px-4 py-2"><%= movie['title'] %></td>
-            <td class="border px-4 py-2 text-center"><%= movie['episode_id'] %></td>
-            <td class="border px-4 py-2"><%= movie['director'] %></td>
-            <td class="border px-4 py-2 text-center"><%= DateTime.parse(movie['release_date']).strftime("%Y") %></td>
-            <td class="border px-4 py-2 text-center"><%= movie['count'] %></td>
-            <td class="border px-4 py-2">
-              <% if movie['rank'] > 2 %>
-                <img src="https://img.icons8.com/clouds/100/000000/security-block.png"/>
-              <% else %>
-                <%= link_to ranking_path(url_param(movie['url'])), class: "text-light", method: :get do %>
-                  <button class="btn btn-liked size-12"><img src="https://img.icons8.com/cotton/64/000000/movie-beginning--v1.png"/></button>
+<% if @ranking.length  > 0 %>
+  <table class="table-fixed bg-white  shadow-lg">
+    <thead>
+      <tr class="text-blue-700 bg-blue-900">
+        <th class="border w-2/2 px-4 py-2 ">Posição</th> 
+        <th class="border w-1/4 px-4 py-2">Filme</th>
+        <th class="border w-1/4 px-4 py-2">Episódio</th>
+        <th class="border w-1/4 px-4 py-2">Diretor</th>
+        <th class="border w-1/4 px-4 py-2">Ano lançamento</th>
+        <th class="border w-1/4 px-4 py-2">votos</th>
+        <th class="border w-1/4 px-4 py-2">Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @ranking.each do | movie | %>
+          <%= link_to likes_path(movie), class: "text-light", method: :post do %>
+            <tr class="text-blue-700">
+              <td class="border px-4 py-2 text-center"><%= movie['rank'] %></td>  
+              <td class="border px-4 py-2"><%= movie['title'] %></td>
+              <td class="border px-4 py-2 text-center"><%= movie['episode_id'] %></td>
+              <td class="border px-4 py-2"><%= movie['director'] %></td>
+              <td class="border px-4 py-2 text-center"><%= DateTime.parse(movie['release_date']).strftime("%Y") %></td>
+              <td class="border px-4 py-2 text-center"><%= movie['count'] %></td>
+              <td class="border px-4 py-2">
+                <% if movie['rank'] > 2 %>
+                  <img src="https://img.icons8.com/clouds/100/000000/security-block.png"/>
+                <% else %>
+                  <%= link_to ranking_path(url_param(movie['url'])), class: "text-light", method: :get do %>
+                    <button class="btn btn-liked size-12"><img src="https://img.icons8.com/cotton/64/000000/movie-beginning--v1.png"/></button>
+                  <% end %>
                 <% end %>
-              <% end %>
-            </td>
-          </tr>
-        <% end %>
-    <% end %>
-  </tbody>
-</table>
+              </td>
+            </tr>
+          <% end %>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+<h2 class="text-4xl mb-4 font-medium text-center text-blue-700">O Ranking está vazio</h2>
+<% end %>
