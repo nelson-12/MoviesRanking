@@ -221,6 +221,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  addressable
   byebug
   capybara (>= 2.15)
   coffee-rails (~> 4.2)
